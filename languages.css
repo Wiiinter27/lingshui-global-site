@@ -1,0 +1,83 @@
+/* Language controls use the original site's red, ivory and serif identity. */
+.mainnav-inner { gap: 16px; }
+.nav-actions {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 16px; margin-inline-start: auto; flex: 0 0 auto;
+}
+.nav-actions .nav-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; max-width: 220px; margin: 0;
+  text-align: center; line-height: 1.4; overflow-wrap: anywhere;
+}
+.language-control {
+  display: flex; align-items: center; gap: 7px; flex: 0 0 auto;
+  color: var(--red-700);
+}
+.language-control svg { width: 21px; height: 21px; flex: 0 0 21px; }
+.language-control select {
+  color: var(--ink); background: var(--paper); border: 1px solid var(--line);
+  border-radius: 3px; min-height: 44px; max-width: 160px;
+  padding: 8px 6px 8px 10px; font: inherit; font-size: 16px;
+  cursor: pointer;
+}
+.language-control select:hover { border-color: var(--red-700); }
+.language-control select:focus-visible { outline: 2px solid var(--red-700); outline-offset: 3px; }
+html:not([lang="zh-CN"]) {
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Arial, "Helvetica Neue", sans-serif;
+  overflow-wrap: break-word;
+}
+html:not([lang="zh-CN"]) .brand-text strong { letter-spacing: .015em; font-size: clamp(20px, 2.2vw, 27px); }
+html:not([lang="zh-CN"]) .brand-text small { letter-spacing: .06em; }
+html:not([lang="zh-CN"]) .masthead-meta { display: none; }
+html:not([lang="zh-CN"]) .nav-list a { font-size: 14px; padding-inline: 11px; letter-spacing: 0; }
+html:not([lang="zh-CN"]) .nav-cta { letter-spacing: 0; padding-inline: 14px; }
+html:not([lang="zh-CN"]) .hero h1 { font-size: clamp(38px, 4.5vw, 64px); letter-spacing: 0; line-height: 1.15; }
+html:not([lang="zh-CN"]) .hero-copy { max-width: 760px; }
+html:not([lang="zh-CN"]) .hero-lede { letter-spacing: 0; }
+html:not([lang="zh-CN"]) .factlist > div { grid-template-columns: minmax(100px, .36fr) 1fr; }
+html:not([lang="zh-CN"]) .stat span { letter-spacing: 0; }
+html:not([lang="zh-CN"]) .topbar-inner { gap: 20px; padding-block: 7px; }
+html:not([lang="zh-CN"]) .topbar-links { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+.brand, .brand-text, .split-body, .industry-body { min-width: 0; }
+@media (min-width: 901px) and (max-width: 1200px) {
+  html:not([lang="zh-CN"]) .mainnav-inner { position: relative; min-height: 58px; }
+  html:not([lang="zh-CN"]) .nav-toggle { display: flex; }
+  html:not([lang="zh-CN"]) .nav-list {
+    position: absolute; inset-inline: 0; top: 100%; flex-direction: column;
+    gap: 0; background: #fff; border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 30px rgba(58, 24, 16, .1); display: none;
+  }
+  html:not([lang="zh-CN"]) .nav-list.open { display: flex; }
+  html:not([lang="zh-CN"]) .nav-list a { padding: 15px 24px; border-top: 1px solid var(--line); white-space: normal; }
+  html:not([lang="zh-CN"]) .nav-list a::after { display: none; }
+}
+@media (max-width: 900px) {
+  .nav-list a { white-space: normal; }
+}
+@media (max-width: 620px) {
+  .mainnav-inner { gap: 8px; padding-block: 6px; }
+  .nav-toggle { flex: 0 0 44px; }
+  .nav-actions { flex: 1 1 0; min-width: 0; gap: 8px; }
+  .nav-actions .nav-cta { flex: 0 1 auto; min-width: 0; padding: 8px; font-size: 13px; letter-spacing: 0; }
+  .language-control { gap: 4px; }
+  .language-control svg { width: 18px; height: 18px; flex-basis: 18px; }
+  .language-control select { max-width: 112px; padding-inline: 6px; }
+  .brand { gap: 10px; }
+  html:not([lang="zh-CN"]) .brand-text strong { font-size: 20px; line-height: 1.25; }
+  html:not([lang="zh-CN"]) .brand-text small { font-size: 8px; line-height: 1.5; }
+  html:not([lang="zh-CN"]) .hero-inner { padding-block: 60px 110px; }
+  html:not([lang="zh-CN"]) .hero h1 { font-size: clamp(35px, 9.5vw, 52px); }
+  html:not([lang="zh-CN"]) .hero-lede { font-size: 16px; line-height: 1.7; }
+  html:not([lang="zh-CN"]) .hero-actions { flex-wrap: wrap; }
+  html:not([lang="zh-CN"]) .factlist > div { grid-template-columns: 1fr; gap: 5px; }
+  .topbar-slogan { overflow-wrap: anywhere; }
+  .photo-toolbar { align-items: flex-start; gap: 16px; flex-direction: column; }
+  .tabs { flex-wrap: wrap; max-width: 100%; }
+  .tab-btn { white-space: normal; text-align: start; }
+}
+@media (max-width: 360px) {
+  .language-control svg { display: none; }
+  .language-control select { max-width: 104px; font-size: 14px; }
+  .nav-actions .nav-cta { font-size: 12px; padding-inline: 6px; }
+}
